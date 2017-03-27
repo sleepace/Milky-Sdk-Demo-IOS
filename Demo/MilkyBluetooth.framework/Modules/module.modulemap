@@ -1,0 +1,6 @@
+framework module MilkyBluetooth {
+  umbrella header "MilkyBluetooth.h"
+
+  export *
+  module * { export * }
+}
