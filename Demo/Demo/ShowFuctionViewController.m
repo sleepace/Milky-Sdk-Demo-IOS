@@ -321,16 +321,22 @@
 {
     NSString *filepath=[[NSBundle mainBundle] pathForResource:@"B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta" ofType:@"des"];
     NSData *package=[NSData dataWithContentsOfFile:filepath];
-    NSString *version=@"1.69";
+    
     long crcDes=1113535353;
     long crcBin=2763936600;
     
-    [SLPMilkyBleHelper upgradeDeviceWithVersion:version crcDes:crcDes crcBin:crcBin upgradePackage:package Progress:^(NSInteger currentCount, NSInteger total) {
-        self.upgrdeProgressLabel.text=[NSString stringWithFormat:@"%.2f%%",100.0*currentCount/(CGFloat)total];
-    } completion:^(BOOL fishish) {
-        self.upgrdeProgressLabel.text=@"Upgrade Done";
+    [NewBleServiceInterface newBleGetDeviceVersionWithSuccess:^(NSString *version) {
+        
+        [SLPMilkyBleHelper upgradeDeviceWithVersion:version crcDes:crcDes crcBin:crcBin upgradePackage:package Progress:^(NSInteger currentCount, NSInteger total) {
+            // 显示升级进度
+            self.upgrdeProgressLabel.text=[NSString stringWithFormat:@"%.2f%%",100.0*currentCount/(CGFloat)total];
+        } completion:^(BOOL fishish) {
+            self.upgrdeProgressLabel.text=@"Upgrade Done";
+        }];
+        
+    } failure:^{
+        self.getDeviceVersionResultLabel.text = @"获取失败";
     }];
-
 }
 
 
