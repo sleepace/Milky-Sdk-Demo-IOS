@@ -31,7 +31,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *setAlarmInfoBtn;
 @property (strong, nonatomic) IBOutlet UIButton *setUserIdBtn;
 @property (strong, nonatomic) IBOutlet UIButton *getSleepStatusBtn;
-
+@property (strong, nonatomic) IBOutlet UIButton *upgradeDevice;
 
 @property (strong, nonatomic) IBOutlet UILabel *scanAndConnectedDevResultLaebel;
 @property (strong, nonatomic) IBOutlet UILabel *loginDeviceStatusLabel;
@@ -45,7 +45,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *setAlarmInfoResultLabel;
 @property (strong, nonatomic) IBOutlet UILabel *setUserIdResultLabel;
 @property (strong, nonatomic) IBOutlet UILabel *getSleepStatusResultLabel;
-
+@property (strong, nonatomic) IBOutlet UILabel *upgrdeProgressLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *fuctionView;
 @property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -316,6 +316,24 @@
     }];
 }
 
+///start upgrade device
+- (IBAction)startUpgradeDevice:(id)sender
+{
+    NSString *filepath=[[NSBundle mainBundle] pathForResource:@"B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta" ofType:@"des"];
+    NSData *package=[NSData dataWithContentsOfFile:filepath];
+    NSString *version=@"1.69";
+    long crcDes=1113535353;
+    long crcBin=2763936600;
+    
+    [SLPMilkyBleHelper upgradeDeviceWithVersion:version crcDes:crcDes crcBin:crcBin upgradePackage:package Progress:^(NSInteger currentCount, NSInteger total) {
+        self.upgrdeProgressLabel.text=[NSString stringWithFormat:@"%.2f%%",100.0*currentCount/(CGFloat)total];
+    } completion:^(BOOL fishish) {
+        self.upgrdeProgressLabel.text=@"Upgrade Done";
+    }];
+
+}
+
+
 
 - (IBAction)disConnectedBtnPress:(id)sender
 {
@@ -332,5 +350,6 @@
     }];//断开与设备连接
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end
