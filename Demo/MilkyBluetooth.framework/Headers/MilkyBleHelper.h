@@ -21,6 +21,7 @@ typedef void (^iiBlock)(NSInteger count, NSInteger total);
 typedef void (^strBlock)(NSString * str);
 typedef void (^dictBlock)(NSDictionary * dict);
 typedef void (^sleepdataBlock)(AllSleepData * sleepData);
+typedef void (^flagBlock)(BOOL flag);
 typedef void (^milkySleepingStatusInfoBlock)(int isAsleep,int isAwake);
 typedef void (^changedMilkySleepStatusSuccessBlock)();
 typedef void (^newBleResponseSuccessBlock)(id responseObject);
@@ -83,10 +84,6 @@ typedef void(^SLPBHTHistoryDataRecieved)(id data);
 - (void) initWithPeripheral:(CBPeripheral *)peripheral readCharactertic:(CBCharacteristic *)readCharactertic;
 
 
-
-
-
-
 #pragma mark -Private
 - (void)initial;
 
@@ -105,6 +102,23 @@ typedef void(^SLPBHTHistoryDataRecieved)(id data);
  *解析数据
  */
 -(void)newBleParaseData:(NSData*)data;
+
+/**
+ *  固件升级
+ *
+ *  @param version 当前设备版本
+ *  @param crcDes  升级信息crcdes值
+ *  @param crcBin  升级信息crcBin值
+ *  @param package 升级包
+ *  @param progress 升级进度
+ *  @param completion 升级完成与否回调
+ */
+- (void)upgradeDeviceWithVersion:(NSString *)version
+                          crcDes:(long)crcDes
+                          crcBin:(long)crcBin
+                  upgradePackage:(NSData *)package
+                        Progress:(void (^)(NSInteger currentCount, NSInteger total))progress
+                      completion:(void (^)(BOOL fishish))completion;
 
 
 @end

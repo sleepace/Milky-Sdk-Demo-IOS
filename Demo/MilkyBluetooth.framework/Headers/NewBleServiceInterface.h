@@ -56,6 +56,8 @@
 +(void)newBleGetDeviceVersionWithSuccess:(void (^)(NSString *version))success
                            failure:(void (^)(void))failure;
 
+
+
 /*
  *电池信息
  */
@@ -125,5 +127,6 @@
 +(void)downLoadHistoryDataStartTime:(UInt32)startTime startIndex:(ushort)startIndex count:(int)count;
 
 +(void)queryHistoryDataStartTime:(UInt32)startTime endTime:(UInt32)endTime;
+
 
 @end

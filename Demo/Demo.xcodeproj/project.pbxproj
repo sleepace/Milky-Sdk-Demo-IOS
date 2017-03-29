@@ -12,6 +12,7 @@
 		040E8D281D05260D00FF508E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E8D271D05260D00FF508E /* Default-568h@2x.png */; };
 		04C034571D0D6492009499FB /* ShowFuctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C034551D0D6492009499FB /* ShowFuctionViewController.m */; };
 		04C034581D0D6492009499FB /* ShowFuctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C034561D0D6492009499FB /* ShowFuctionViewController.xib */; };
+		263F8F261E8A5A2D004B490B /* B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta.des in Resources */ = {isa = PBXBuildFile; fileRef = 263F8F251E8A5A2D004B490B /* B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta.des */; };
 		26BE13D71E5685E1003C8B80 /* MilkyBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BE13D61E5685E1003C8B80 /* MilkyBluetooth.framework */; };
 		A410E2A21B29805B0084ABD0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A410E2A11B29805B0084ABD0 /* SystemConfiguration.framework */; };
 		A410E2A41B2980F80084ABD0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A410E2A31B2980F80084ABD0 /* MobileCoreServices.framework */; };
@@ -41,6 +42,7 @@
 		04C034551D0D6492009499FB /* ShowFuctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFuctionViewController.m; sourceTree = "<group>"; };
 		04C034561D0D6492009499FB /* ShowFuctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowFuctionViewController.xib; sourceTree = "<group>"; };
 		263665A41DFFC7460095EF87 /* MilkyBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MilkyBluetooth.framework; path = "../../../../未命名文件夹 2/MilkyBluetooth.framework"; sourceTree = "<group>"; };
+		263F8F251E8A5A2D004B490B /* B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta.des */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta.des"; sourceTree = "<group>"; };
 		26BBF2871E5428DF00BA4892 /* MilkyBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MilkyBluetooth.framework; path = ../../../../MilkyBluetooth.framework; sourceTree = "<group>"; };
 		26BBF28F1E542CB900BA4892 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		26BE13D61E5685E1003C8B80 /* MilkyBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MilkyBluetooth.framework; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		263F8F241E8A5A2C004B490B /* v_1.69 */ = {
+			isa = PBXGroup;
+			children = (
+				263F8F251E8A5A2D004B490B /* B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta.des */,
+			);
+			path = v_1.69;
+			sourceTree = "<group>";
+		};
 		A4C102531AA6B0B500495CD2 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 				04C034541D0D6492009499FB /* ShowFuctionViewController.h */,
 				04C034551D0D6492009499FB /* ShowFuctionViewController.m */,
 				04C034561D0D6492009499FB /* ShowFuctionViewController.xib */,
+				263F8F241E8A5A2C004B490B /* v_1.69 */,
 				A4C1026C1AA6B0B500495CD2 /* Images.xcassets */,
 				A4C1025F1AA6B0B500495CD2 /* Supporting Files */,
 			);
@@ -239,6 +250,7 @@
 			files = (
 				A4FC31FF1AE77648008A7496 /* green_button@2x.png in Resources */,
 				0402E5711D0D054F009073E0 /* RootViewController.xib in Resources */,
+				263F8F261E8A5A2D004B490B /* B501_20161223.1.69_32Hz_Knock&Shake_Org_Log_Beta.des in Resources */,
 				040E8D281D05260D00FF508E /* Default-568h@2x.png in Resources */,
 				04C034581D0D6492009499FB /* ShowFuctionViewController.xib in Resources */,
 				A4C1026D1AA6B0B500495CD2 /* Images.xcassets in Resources */,
