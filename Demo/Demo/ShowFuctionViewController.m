@@ -205,7 +205,7 @@
 - (IBAction)setUserIdBtnPress:(id)sender
 {
     __weak typeof (self) weakSelf = self;
-    [NewBleServiceInterface setUserIdToMilky:0 WithSuccess:^(id responseObject) {
+    [NewBleServiceInterface setUserIdToMilky:55 WithSuccess:^(id responseObject) {
         weakSelf.setUserIdResultLabel.text = @"设置成功";
     } fail:^{
         weakSelf.setUserIdResultLabel.text = @"设置失败";
